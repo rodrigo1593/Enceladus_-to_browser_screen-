@@ -119,10 +119,10 @@ int main(int argc, char * argv[])
     const char * errMsg;
 
     #ifdef RESET_IOP  
-    SifInitRpc(0);
-    while (!SifIopReset("", 0)){};
-    while (!SifIopSync()){};
-    SifInitRpc(0);
+   // SifInitRpc(0);
+    //while (!SifIopReset("", 0)){};
+  //  while (!SifIopSync()){};
+  //  SifInitRpc(0);
     #endif
     
     // install sbv patch fix
