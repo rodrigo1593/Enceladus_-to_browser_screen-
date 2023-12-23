@@ -210,7 +210,7 @@ static int lua_dir(lua_State *L)
 }
 
 
-static int lua_dev_table(lua_State *L)
+/*static int lua_dev_table(lua_State *L)
 {
 	int i, devcnt;
 	struct fileXioDevice DEV[FILEXIO_MAX_DEVICES];
@@ -236,7 +236,7 @@ static int lua_dev_table(lua_State *L)
 	//	lua_pushnil(L);
 	//}
 	return 1;  /* table is already on top */
-}
+}*/
 
 static int lua_createDir(lua_State *L)
 {
