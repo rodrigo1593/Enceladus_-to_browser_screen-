@@ -214,7 +214,7 @@ int main(int argc, char * argv[])
     printf("boot path : %s\n", boot_path);
 	dbgprintf("boot path : %s\n", boot_path);
     
-    while (1)
+    while (errMsg=NULL)
     {
     
         // if no parameters are specified, use the default boot
@@ -225,8 +225,9 @@ int main(int argc, char * argv[])
         }   
 
         init_scr();
-
-        if (errMsg != NULL)
+    }
+	
+if (errMsg != NULL)
         {
             scr_setfontcolor(0x0000ff);
             sleep(1); //ensures message is printed no matter what
@@ -241,8 +242,6 @@ int main(int argc, char * argv[])
 		    }
             scr_setfontcolor(0xffffff);
         }
-
-    }
 
 	return 0;
 }
