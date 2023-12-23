@@ -216,7 +216,7 @@ static int lua_dev_table(lua_State *L)
 	struct fileXioDevice DEV[FILEXIO_MAX_DEVICES];
 	
 	devcnt = fileXioGetDeviceList(DEV, FILEXIO_MAX_DEVICES);
-	if (devcnt > 0) {
+	//if (devcnt > 0) {
 		lua_newtable(L);
 		for(i = 0; i < devcnt; i++ )
 		{
@@ -232,9 +232,9 @@ static int lua_dev_table(lua_State *L)
     	    lua_settable(L, -3);
 		    lua_settable(L, -3);
 		}
-	} else {
-		lua_pushnil(L);
-	}
+	//} else {
+	//	lua_pushnil(L);
+	//}
 	return 1;  /* table is already on top */
 }
 
