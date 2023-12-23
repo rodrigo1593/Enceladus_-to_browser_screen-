@@ -7,7 +7,7 @@
 #include "include/luaplayer.h"
 #include "include/md5.h"
 #include "include/graphics.h"
-
+#include <sys/types.h>
 #include "include/system.h"
 
 #define NEWLIB_PORT_AWARE
@@ -186,13 +186,16 @@ static int lua_dir(lua_State *L)
 			lua_pushstring(L, "name");
         	lua_pushstring(L, dir->d_name);
         	lua_settable(L, -3);
-        		
+
+		struct stat file_stat;
+		stat(dir->d_name, &file_stat);
+			
         	lua_pushstring(L, "size");
-        	lua_pushnumber(L, dir->d_stat.st_size);
+        	lua_pushnumber(L, file_stat.st_size);//lua_pushnumber(L, dir->d_stat.st_size);
         	lua_settable(L, -3);
         	        
         	lua_pushstring(L, "directory");
-        	lua_pushboolean(L, S_ISDIR(dir->d_stat.st_mode));
+        	lua_pushboolean(L, S_ISDIR(file_stat.st_mode));//lua_pushboolean(L, S_ISDIR(dir->d_stat.st_mode));
         	lua_settable(L, -3);
 			lua_settable(L, -3);
 	    }
