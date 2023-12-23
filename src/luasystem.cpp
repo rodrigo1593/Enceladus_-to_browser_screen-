@@ -712,7 +712,7 @@ static const luaL_Reg System_functions[] = {
 	//{"doesFileExist",            lua_checkexist}, BREAKS ERROR HANDLING IF DECLARED INSIDE TABLE. DONT ASK ME WHY
 	{"currentDirectory",             lua_curdir},
 	{"listDirectory",           	    lua_dir},
-	{"listDevices",               lua_dev_table},
+	//{"listDevices",               lua_dev_table},
 	{"createDirectory",           lua_createDir},
 	{"removeDirectory",           lua_removeDir},
 	{"moveFile",	               lua_movefile},
