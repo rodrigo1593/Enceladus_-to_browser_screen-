@@ -235,8 +235,7 @@ static int lua_dir(lua_State *L)
 	//} else {
 	//	lua_pushnil(L);
 	//}
-	return 1;  /* table is already on top */
-}*/
+	return 1;*/  /* table is already on top }*/
 
 static int lua_createDir(lua_State *L)
 {
